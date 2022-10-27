@@ -1,3 +1,5 @@
+server:
+  port: 8884
 
 spring:
   #mysql数据源
