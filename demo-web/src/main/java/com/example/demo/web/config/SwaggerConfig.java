@@ -19,7 +19,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class SwaggerConfig {
 
-    @Value(value = "${swagger.enabled}")
+    @Value(value = "${swagger.enabled:true}")
     private Boolean swaggerEnabled;
 
     @Bean
