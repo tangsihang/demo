@@ -1,6 +1,6 @@
 package com.example.demo.biz.service;
 
-import com.example.demo.web.DemoWebApplication;
+import com.example.demo.web.WebApplication;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,7 +14,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  */
 @Slf4j
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes = {DemoWebApplication.class})
+@SpringBootTest(classes = {WebApplication.class})
 public class DemoServiceTest {
 
     @Autowired

@@ -1,13 +1,9 @@
-package com.example.demo.remote.model.param;
+package com.example.demo.common.model;
 
 import lombok.Data;
 
 import java.io.Serializable;
 
-/**
- * @author linjian
- * @date 2019/3/15
- */
 @Data
 public class DemoParam implements Serializable {
 
