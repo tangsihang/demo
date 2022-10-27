@@ -21,6 +21,14 @@ public class Result<T> implements Serializable {
     public Result() {
     }
 
+    public static <T> Result<T> Success() {
+        Result<T> result = new Result<T>();
+        result.data = null;
+        result.success = true;
+        result.code = 0;
+        return result;
+    }
+
     public static <T> Result<T> Success(T data) {
         Result<T> result = new Result<T>();
         result.data = data;
