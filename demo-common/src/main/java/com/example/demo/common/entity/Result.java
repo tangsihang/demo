@@ -21,7 +21,7 @@ public class Result<T> implements Serializable {
     public Result() {
     }
 
-    public static <T> Result<T> wrapSuccessfulResult(T data) {
+    public static <T> Result<T> Success(T data) {
         Result<T> result = new Result<T>();
         result.data = data;
         result.success = true;
@@ -29,7 +29,7 @@ public class Result<T> implements Serializable {
         return result;
     }
 
-    public static <T> Result<T> wrapSuccessfulResult(String message, T data) {
+    public static <T> Result<T> Success(String message, T data) {
         Result<T> result = new Result<T>();
         result.data = data;
         result.success = true;
@@ -38,7 +38,7 @@ public class Result<T> implements Serializable {
         return result;
     }
 
-    public static <T> Result<T> wrapErrorResult(ServiceErrors error) {
+    public static <T> Result<T> Error(ServiceErrors error) {
         Result<T> result = new Result<T>();
         result.success = false;
         result.code = error.getCode();
@@ -46,7 +46,7 @@ public class Result<T> implements Serializable {
         return result;
     }
 
-    public static <T> Result<T> wrapErrorResult(ServiceErrors error, Object... extendMsg) {
+    public static <T> Result<T> Error(ServiceErrors error, Object... extendMsg) {
         Result<T> result = new Result<T>();
         result.success = false;
         result.code = error.getCode();
@@ -54,7 +54,7 @@ public class Result<T> implements Serializable {
         return result;
     }
 
-    public static <T> Result<T> wrapErrorResult(Integer code, String message) {
+    public static <T> Result<T> Error(Integer code, String message) {
         Result<T> result = new Result<T>();
         result.success = false;
         result.code = code;

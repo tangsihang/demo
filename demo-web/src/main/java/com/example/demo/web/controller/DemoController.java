@@ -25,6 +25,6 @@ public class DemoController {
     @GetMapping("test")
     @ApiOperation("测试")
     public Result<String> test(@RequestParam("id") Integer id) {
-        return Result.wrapSuccessfulResult(demoService.test(id));
+        return Result.Success(demoService.test(id));
     }
 }

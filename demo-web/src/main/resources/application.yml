@@ -17,9 +17,14 @@ spring:
   profiles:
     active: dev
 
-mybatis:
-  mapper-locations: classpath:mybatis/*/*.xml
-  type-aliases-package: com.example.demo.dao.entity
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/*.xml
+  configuration:
+   map-underscore-to-camel-case: false
+   db-config:
+      db-type: MYSQL
+      logic-delete-value: 0
+      logic-not-delete-value: 1
 
 log:
   charset: UTF-8

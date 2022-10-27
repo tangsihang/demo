@@ -25,21 +25,21 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(HttpMessageNotReadableException.class)
     public Result<Boolean> handleHttpMessageNotReadableException(HttpMessageNotReadableException e) {
         log.error(e.getMessage(), e);
-        return Result.wrapErrorResult(DemoErrors.PARAM_NULL);
+        return Result.Error(DemoErrors.PARAM_NULL);
     }
 
     @ResponseStatus(HttpStatus.OK)
     @ExceptionHandler(MissingServletRequestParameterException.class)
     public Result<Boolean> handleMissingServletRequestParameterException(MissingServletRequestParameterException e) {
         log.error(e.getMessage(), e);
-        return Result.wrapErrorResult(DemoErrors.PARAM_MISSING);
+        return Result.Error(DemoErrors.PARAM_MISSING);
     }
 
     @ResponseStatus(HttpStatus.OK)
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public Result<Boolean> handleMethodArgumentNotValidException(MethodArgumentNotValidException e) {
         log.error(e.getMessage(), e);
-        return Result.wrapErrorResult(DemoErrors.PARAM_ERROR.getCode(),
+        return Result.Error(DemoErrors.PARAM_ERROR.getCode(),
                 Objects.requireNonNull(e.getBindingResult().getFieldError()).getDefaultMessage());
     }
 
@@ -47,6 +47,6 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(Exception.class)
     public Result<Boolean> handleOtherException(Exception e) {
         log.error(e.getMessage(), e);
-        return Result.wrapErrorResult(DemoErrors.SYSTEM_ERROR);
+        return Result.Error(DemoErrors.SYSTEM_ERROR);
     }
 }
